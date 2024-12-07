@@ -1,0 +1,351 @@
+/* Base style reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF7E1;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+main {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Scroll bar styles */
+.scroll-bar {
+    background-color: #000;
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 1;
+}
+
+.text-container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: fit-content;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.scroll-content {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100vw;
+}
+
+.text-item {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    flex-shrink: 0;
+}
+
+.banana-icon {
+    height: 20px;
+    margin-right: 6px;
+    object-fit: contain;
+}
+
+.peelyman-text {
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Header main content area */
+.header-main {
+    width: 100%;
+    background-color: #FFF7E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* About section styles */
+.about {
+    padding: 60px 0 0 0;
+    text-align: center;
+    background-color: #FFF7E1;
+}
+
+.about-title {
+    width: 200px;  /* Adjust based on actual ABOUT.png image */
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.comic-strip {
+    width: 100%;
+    max-width: 800px;  /* Adjust based on actual content */
+    margin: 0 auto;
+}
+
+.comic-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove unnecessary styles */
+.about-text {
+    display: none;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .logo {
+        max-width: 150px;
+    }
+    
+    .about {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-pattern {
+        height: 30px;
+    }
+    
+    .logo {
+        max-width: 120px;
+    }
+}
+
+/* Banana grid layout */
+.banana-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Row spacing */
+    padding: 20px;
+}
+
+.banana-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    position: relative;
+}
+
+.banana-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.banana-wrapper {
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.banana-item {
+    height: auto;
+    display: block;
+    cursor: pointer;
+    pointer-events: auto;
+    transform-origin: bottom center;
+    --rotation: 0deg;
+    --scale: 1;
+}
+
+.banana-click-animation {
+    animation: bananaClick 0.3s ease-in-out;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.banana-wiggle {
+    animation: bananaWiggle 2s ease-in-out infinite;
+}
+
+/* Hover effect */
+.banana-item:hover {
+    --scale: 1.05;
+}
+
+.banana-wrapper:hover {
+    z-index: 2;
+}
+
+/* Section titles and containers */
+.section-title {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.gallery-container,
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+/* Responsive grid adjustments */
+@media screen and (max-width: 1200px) {
+    .banana-grid {
+        width: 120%;
+        margin-left: -10%;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banana-grid {
+        width: 140%;
+        margin-left: -20%;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banana-grid {
+        width: 160%;
+        margin-left: -30%;
+        transform: translateX(0);
+    }
+}
+
+/* CA section styles */
+.ca-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.ca-section {
+    padding-top: 60px;
+}
+
+.x-decoration {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: monospace;
+    line-height: 1.2;
+    color: #000;
+}
+
+.x-line {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* Styles for all scrollable containers */
+.scrollable-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+} 
+
+/* Banana click animation */
+@keyframes bananaClick {
+    0% {
+        transform: rotate(var(--rotation)) scale(1);
+    }
+    50% {
+        transform: rotate(var(--rotation)) scale(0.8);
+    }
+    100% {
+        transform: rotate(var(--rotation)) scale(1);
+    }
+}
+
+/* Banana wiggle animation */
+@keyframes bananaWiggle {
+    0% {
+        --rotation: 0deg;
+        transform: rotate(var(--rotation)) scale(var(--scale, 1));
+    }
+    25% {
+        --rotation: -5deg;
+        transform: rotate(var(--rotation)) scale(var(--scale, 1));
+    }
+    75% {
+        --rotation: 5deg;
+        transform: rotate(var(--rotation)) scale(var(--scale, 1));
+    }
+    100% {
+        --rotation: 0deg;
+        transform: rotate(var(--rotation)) scale(var(--scale, 1));
+    }
+}

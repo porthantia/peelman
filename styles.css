@@ -85,9 +85,11 @@ main {
     width: 100%;
     background-color: #FFF7E1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 .header-banner {
@@ -348,4 +350,126 @@ main {
         --rotation: 0deg;
         transform: rotate(var(--rotation)) scale(var(--scale, 1));
     }
+}
+
+.ca-info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 5px 15px;
+    z-index: 2;
+    width: 90%;
+    max-width: 600px;
+}
+
+.ca-text {
+    font-family: monospace;
+    font-size: 21px;
+    color: #000;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(255, 247, 225, 0.8);
+}
+
+.ca-short {
+    display: none;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .ca-text {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .ca-full {
+        display: none;
+    }
+
+    .ca-short {
+        display: inline;
+    }
+}
+
+/* 更小屏幕的适配 */
+@media screen and (max-width: 480px) {
+    .ca-text {
+        font-size: 11px;
+    }
+}
+
+.buy-now-button {
+    cursor: pointer;
+    height: 45px;
+    display: block;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .ca-info {
+        bottom: -2px;
+        gap: 15px;
+        padding: 3px 10px;
+        width: 95%;
+        justify-content: center;
+    }
+    
+    .ca-text {
+        font-size: 13px;
+        text-align: center;
+        max-width: 200px;  /* 限制宽度 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* 创建中间省略号效果 */
+    .ca-text::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        right: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        direction: rtl;  /* 从右向左显示文本 */
+    }
+    
+    .buy-now-button {
+        height: 30px;
+    }
+}
+
+/* 更小屏幕的适配 */
+@media screen and (max-width: 480px) {
+    .ca-info {
+        bottom: -4px;
+        width: 95%;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .ca-text {
+        font-size: 11px;
+        max-width: 150px;  /* 更小屏幕上进一步限制宽度 */
+    }
+    
+    .buy-now-button {
+        height: 25px;
+    }
+}
+
+.buy-now-link {
+    display: block;
+    text-decoration: none;
+}
+
+.buy-now-link:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }

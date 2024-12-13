@@ -128,7 +128,8 @@ function initializeScrollers() {
     const scrollers = [
         { id: 'topScrollContainer', direction: 'left', speed: 1.5 },
         { id: 'bottomScrollContainer', direction: 'right', speed: 1.5 },
-        { id: 'aboutScrollContainer', direction: 'left', speed: 1.5 }
+        { id: 'aboutScrollContainer', direction: 'left', speed: 1.5 },
+        { id: 'finalScrollContainer', direction: 'right', speed: 1.5 }
     ];
 
     scrollers.forEach(scroller => {
